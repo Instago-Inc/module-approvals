@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>approvals Documentation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 48px 24px;
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 28px;
+      }
+      .intro {
+        font-size: 16px;
+        color: #e2e8f0;
+      }
+      p {
+        margin: 0 0 16px;
+        color: #cbd5f5;
+      }
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+      a {
+        color: #93c5fd;
+      }
+      .section {
+        margin-top: 28px;
+      }
+      .muted {
+        color: #94a3b8;
+        font-size: 14px;
+        margin: 6px 0 0;
+      }
+      .code {
+        background: #0b1220;
+        border: 1px solid #1e293b;
+        border-radius: 10px;
+        padding: 16px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #e2e8f0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>module/approvals - V8 module</h1>
+      <p class="intro">Make lightweight human approvals part of your workflows without wiring up a full ticketing system. This module stores simple approval records so steps can pause, check, and finalize decisions consistently.</p>
+      <p class="muted">Learn more at <a href="https://instago.ai" target="_blank" rel="noopener">https://instago.ai</a>.</p>
+      <div class="section">
+        <h2>Technical reference</h2>
+        <h1>module/approvals - V8 module</h1>
+<p>Make lightweight human approvals part of your workflows without wiring up a full ticketing system. This module stores simple approval records so steps can pause, check, and finalize decisions consistently.</p>
+<p>Use it anywhere you need a quick yes/no decision with a bit of context. Learn more about the platform at https://instago.ai.</p>
+<h2>Technical reference</h2>
+<p>All functions return <code>{ ok, data, error }</code> with <code>data</code> set on success.</p>
+<h3>Exports</h3>
+<ul>
+<li><code>request({ id, text, channels?, metadata?, workflow? })</code></li>
+<li><code>status({ id, workflow? })</code></li>
+<li><code>complete({ id, decision: &#x27;approved&#x27;|&#x27;rejected&#x27;, note?, workflow? })</code></li>
+</ul>
+<h3>Usage</h3>
+<pre class="code"><code>
+const approvals = require(&#x27;approvals@latest&#x27;);
+
+await approvals.request({
+  id: &#x27;leave-123&#x27;,
+  text: &#x27;Approve PTO for Jane?&#x27;,
+  channels: [&#x27;email:jane@example.com&#x27;],
+  metadata: { days: 3 }
+});
+
+const current = await approvals.status({ id: &#x27;leave-123&#x27; });
+</code></pre>
+<h3>Configuration</h3>
+<p>No environment keys are required or optional (<code>env.json</code> is empty).</p>
+<h3>Examples</h3>
+<pre class="code"><code>
+const approvals = require(&#x27;approvals@latest&#x27;);
+
+await approvals.complete({
+  id: &#x27;leave-123&#x27;,
+  decision: &#x27;approved&#x27;,
+  note: &#x27;Enjoy!&#x27;
+});
+</code></pre>
+      </div>
+      
+    </main>
+  </body>
+</html>
