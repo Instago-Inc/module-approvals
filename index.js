@@ -1,4 +1,4 @@
-// approvals@1.0.0 — human-in-the-loop lightweight approvals
+// approvals@latest — human-in-the-loop lightweight approvals
 // Stores approval state in module storage under approvals/<id>.json
 // API:
 // - request({ id, text, channels?, metadata? }) -> { ok, data }
@@ -6,9 +6,9 @@
 // - complete({ id, decision: 'approved'|'rejected', note? }) -> { ok, data }
 
 (function(){
-  const b64 = require('b64@1.0.0');
-  const j = require('json@1.0.0');
-  const log = require('log@1.0.0').create('approvals');
+  const b64 = require('b64@latest');
+  const j = require('json@latest');
+  const log = require('log@latest').create('approvals');
 
   function pathFor(id){ return 'approvals/' + encodeURIComponent(String(id||'')) + '.json'; }
 

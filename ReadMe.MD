@@ -1,8 +1,8 @@
 # module/approvals - V8 module
 
-Keep human approvals simple and traceable without setting up a full ticketing flow. This module stores lightweight approval records so workflows can request, check, and finalize decisions consistently.
+Keep human approvals simple and traceable without setting up a full ticketing flow. This module helps workflows request, check, and finalize decisions with minimal ceremony.
 
-Use it anywhere you need a quick yes/no gate with context. Learn more about the platform at https://instago.ai.
+Use it anywhere you need a quick yes/no gate with context. Learn more at https://instago.ai.
 
 ## Technical reference
 

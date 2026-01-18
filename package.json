@@ -1,6 +1,6 @@
 {
   "name": "@instago/approvals",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Module approvals",
   "main": "index.js",
   "type": "commonjs",
